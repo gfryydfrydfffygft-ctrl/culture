@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eonix - Modern Glass Website</title>
+    <link rel="stylesheet" href="rehersal.css">
+</head>
+<body>
+
+   <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#" class="brand-name">Eonix</a>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-links" id="nav-list">
+                <li class="nav-item green"><a href="index.html">Home</a></li>
+                <li class="nav-item pink"><a href="home.html">About</a></li>
+                
+                <li class="nav-item orange dropdown">
+                    <a href="javascript:void(0)" class="dropbtn" id="nationBtn">Nation ▾</a>
+                    <ul class="dropdown-content" id="nationDropdown">
+                        <li><a href="kashin.html">Kachin</a></li>
+                        <li><a href="kayah.html">Kayah</a></li>
+                        <li><a href="kayin.html">Kayin</a></li>
+                        <li><a href="chin.html">Chin</a></li>
+                        <li><a href="mon.html">Mon</a></li>
+                        <li><a href="rakhine.html">Rakhine</a></li>
+                        <li><a href="shan.html">Shan</a></li>
+                        <li><a href="burma.html">Burma</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item yellow"><a href="special.html">Special</a></li>
+                <li class="nav-item blue"><a href="contact.html">Contact</a></li>
+                <li class="nav-mobile-cta"><a href="#" class="btn-free">Donate Us</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="#" class="btn-free">Donate Us<span class="arrow">›</span></a>
+            </div>
+        </div>
+    </nav>
+
+        <main class="hero-section">
+            <div class="container content-center">
+                <h1 class="welcomemessage">"အမှတ်တရ အစားအသောက်များနဲ့ ရိုးရာယဉ်ကျေးမှုကို ပြန်လည် အမှတ်ရလိုက်ပါ။"</h1>
+                
+                <div class="banner-box1">
+                    <img src="bunderone.jpg" alt="Myanmar Culture Banner" class="banner-img1">
+                </div><br>
+                <h1 class="welcomemessage">"တစ်ပွဲစားလိုက်တိုင်း အိမ်ရဲ့နွေးထွေးမှုကို သတိရစေတဲ့ ကမ္ဘာ့အကောင်းဆုံး Salad စာရင်းဝင် မြန်မာ့ဂုဏ်ဆောင် လက်ဖက်သုပ်"</h1>
+                <div class = "banner-box2">
+                    <img src="bunnertwo.jpg" alt="Myanmar Culture LatFat" class="banner-img2">
+                </div><br>
+                <h1 class="welcomemessage">"ဘယ်နှစ်ခါစားစား မရိုးနိုင်တဲ့ မြန်မာတိုရဲ့ မနက်ခင်းအနှစ်သာရ - အငွေ့တထောင်းထောင်းနဲ့ မုန့်ဟင်းခါးပူပူလေး တစ်ပွဲ"</h1>
+                <div class = "banner-box3">
+                    <img src="bannerthree.jpg" alt="Myanmar Culture MontHinKhar" class="banner-img3">
+                </div>
+            </div>
+        </main>
+    
+
+    <script>
+        // Hamburger Menu Logic
+        const menu = document.querySelector('#mobile-menu');
+        const navLinks = document.querySelector('#nav-list');
+
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('is-active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Dropdown Logic
+        const nationBtn = document.getElementById('nationBtn');
+        const nationDropdown = document.getElementById('nationDropdown');
+
+        nationBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nationDropdown.classList.toggle('show');
+        });
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                if (nationDropdown.classList.contains('show')) {
+                    nationDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
